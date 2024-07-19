@@ -1,9 +1,13 @@
 #! /bin/sh
+# Author: Stemax
+# Repository: https://github.com/stemax/branch_builder
+# Year: 2024
 clear
-buildNumber=1
-buildName='Build_'$buildNumber"_$(date +'%Y_%m_%d')"
 # Please enter your git PROD/MAIN parent branch name
 mainParentBranch="production"
+# Predefined params
+buildNumber=1
+buildName='Build_'$buildNumber"_$(date +'%Y_%m_%d')"
 
 echo "Start a \033[32mnew build\033[0m process now? [y/n]:"
 read startBuildProccess

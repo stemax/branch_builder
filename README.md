@@ -24,11 +24,14 @@ The script lists the **microservices/folders** "monolith", "management", and "ap
 SECOND SET:**Just set your subfolders/microservices folders, just search at the end https://github.com/stemax/branch_builder/blob/1a3307476bee19a13992cc5e64179dddc0642bd2/build.sh#L77 `#List of microservices (directories)` and change on your folders!**
 
 Example for folders/microservices:
+```
 .ProjectFolder
 |-monolith
 |-management
 |-application
 build.sh
+```
+
 ```
   create_build "monolith"
   create_build "management"

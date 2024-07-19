@@ -10,13 +10,25 @@ The script checks for changes in the current branch, stashes them if necessary, 
 To use the script, follow these steps:
 1. Clone the repository containing the script.
 2. Make sure you have bash installed on your system.
-3. Run the script by executing the following command:
+3. **Set configuration** for your system:
+   The script prompts the user to start a new build process by entering a build number and branch name. The **`mainParentBranch`** is set to "production" <- **this parameter is your initial(parent/main) branch!**
+   
+The script then defines a function create_build that takes a directory name as an argument. It checks if the directory exists and prompts the user to start creating a new build in that directory. If the user agrees, the script changes to the main parent branch, fetches the latest changes, and creates a new branch with the specified build name. It then prompts the user to push the new branch to the remote repository.
+
+The script lists the **microservices/folders** "monolith", "management", and "application" as directories and calls the create_build function for each of them.
+**Just set your subfolders/microservices folders on line #73 aftrer `#List of microservices (directories)` !**
+
+If the user chooses not to start a new build process, the script cancels the process.
+
+This configuration allows for seamless creation of new build branches for the specified microservices in the production environment.
+
+4. Run the script by executing the following command:
 
 ```bash
 $ sh build_script.sh
 ```
 
-4. Follow the prompts to start the build process and enter the required information.
+5. Follow the prompts to start the build process and enter the required information.
 
 Example output:
 ```

@@ -16,11 +16,15 @@ To use the script, follow these steps:
 The script then defines a function create_build that takes a directory name as an argument. It checks if the directory exists and prompts the user to start creating a new build in that directory. If the user agrees, the script changes to the main parent branch, fetches the latest changes, and creates a new branch with the specified build name. It then prompts the user to push the new branch to the remote repository.
 
 The script lists the **microservices/folders** "monolith", "management", and "application" as directories and calls the create_build function for each of them.
-**Just set your subfolders/microservices folders on line #73 aftrer `#List of microservices (directories)` !**
 
-If the user chooses not to start a new build process, the script cancels the process.
+**Just set your subfolders/microservices folders, just search at the end https://github.com/stemax/branch_builder/blob/1a3307476bee19a13992cc5e64179dddc0642bd2/build.sh#L77 `#List of microservices (directories)` and change on your folders!**
 
-This configuration allows for seamless creation of new build branches for the specified microservices in the production environment.
+Example of folders/microservices:
+```
+  create_build "monolith"
+  create_build "management"
+  create_build "application"
+```
 
 4. Run the script by executing the following command:
 
@@ -35,15 +39,15 @@ Example output:
 Start a new build process now? [y/n]: y
 Please enter new Build Number:
 1
-Please enter New branch name [Build_1_2022_05_10]:
--------------------------Build_1_2022_05_10----------------------------
+Please enter New branch name [Build_1_2024_05_10]:
+-------------------------Build_1_2024_05_10----------------------------
 Detected directory monolith. Should we start creating a new build here? [y/n]: y
 Current branch for monolith is: development
 No changes in the current branch. Nothing to stash.
 Changing to main parent branch: production
-Branch Build_1_2022_05_10 already exists.
-Almost ready for Pushing? So Service: monolith, Build: Build_1_2022_05_10. Start pushing [y/n]: y
-Pushing new branch Build_1_2022_05_10 to origin!!!
+Branch Build_1_2024_05_10 already exists.
+Almost ready for Pushing? So Service: monolith, Build: Build_1_2024_05_10. Start pushing [y/n]: y
+Pushing new branch Build_1_2024_05_10 to origin!!!
 Detected directory management. Should we start creating a new build here? [y/n]: n
 management not found!
 Detected directory application. Should we start creating a new build here? [y/n]: y

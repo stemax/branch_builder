@@ -3,7 +3,7 @@ clear
 buildNumber=1
 buildName='Build_'$buildNumber"_$(date +'%Y_%m_%d')"
 # Please enter your git PROD/MAIN parent branch name
-mainParentBranch="sales-env"
+mainParentBranch="production"
 
 echo "Start a \033[32mnew build\033[0m process now? [y/n]:"
 read startBuildProccess
@@ -71,11 +71,9 @@ if [ "$startBuildProccess" != "${startBuildProccess#[Yy]}" ]; then
     }
 
 # List of microservices (directories)
-  create_build "monolith-lambda"
-  create_build "case-management"
-  create_build "hwa-application"
-  create_build "hwa-scheduler"
-#  create_build "hwa-notifications-manager"
+  create_build "monolith"
+  create_build "management"
+  create_build "application"
 
 else
   echo '\033[33m Canceled. So, than in another time. Thank you!\033[0m'

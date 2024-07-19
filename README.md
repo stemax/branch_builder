@@ -8,12 +8,12 @@ It then checks for existing directories corresponding to different microservices
 The script checks for changes in the current branch, stashes them if necessary, switches to the main parent branch specified by the user, creates a new build branch based on the input build number and name, and pushes the new branch to the remote repository if instructed to do so.
 
 To use the script, follow these steps:
-1. Clone the repository containing the script.
-2. Make sure you have bash installed on your system.
-3. **Set configuration** for your system:
+1. Clone the repository containing the script(Or just download build.sh).
+2. Move to parent folder **build.sh** (and make sure you have bash installed on your system).
+3. **Edit build.sh** and **Set configuration** for your system:
    The script prompts the user to start a new build process by entering a build number and branch name.
 
-   The **`mainParentBranch`** is set to "production" <- **this parameter is your initial(parent/main) branch!**
+   FIRST SET: The **`mainParentBranch`** is set to "production" <- **this parameter is your initial(parent/main) branch!**
 
    https://github.com/stemax/branch_builder/blob/1a3307476bee19a13992cc5e64179dddc0642bd2/build.sh#L7
    
@@ -21,9 +21,14 @@ The script then defines a function create_build that takes a directory name as a
 
 The script lists the **microservices/folders** "monolith", "management", and "application" as directories and calls the create_build function for each of them.
 
-**Just set your subfolders/microservices folders, just search at the end https://github.com/stemax/branch_builder/blob/1a3307476bee19a13992cc5e64179dddc0642bd2/build.sh#L77 `#List of microservices (directories)` and change on your folders!**
+SECOND SET:**Just set your subfolders/microservices folders, just search at the end https://github.com/stemax/branch_builder/blob/1a3307476bee19a13992cc5e64179dddc0642bd2/build.sh#L77 `#List of microservices (directories)` and change on your folders!**
 
-Example of folders/microservices:
+Example for folders/microservices:
+.ProjectFolder
+|-monolith
+|-management
+|-application
+build.sh
 ```
   create_build "monolith"
   create_build "management"

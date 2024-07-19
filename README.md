@@ -67,3 +67,4 @@ Detected directory application. Should we start creating a new build here? [y/n]
 ```
 
 This script simplifies the process of creating new build branches for multiple microservices within a project.
+

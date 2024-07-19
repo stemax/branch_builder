@@ -11,7 +11,11 @@ To use the script, follow these steps:
 1. Clone the repository containing the script.
 2. Make sure you have bash installed on your system.
 3. **Set configuration** for your system:
-   The script prompts the user to start a new build process by entering a build number and branch name. The **`mainParentBranch`** is set to "production" <- **this parameter is your initial(parent/main) branch!**
+   The script prompts the user to start a new build process by entering a build number and branch name.
+
+   The **`mainParentBranch`** is set to "production" <- **this parameter is your initial(parent/main) branch!**
+
+   https://github.com/stemax/branch_builder/blob/1a3307476bee19a13992cc5e64179dddc0642bd2/build.sh#L7
    
 The script then defines a function create_build that takes a directory name as an argument. It checks if the directory exists and prompts the user to start creating a new build in that directory. If the user agrees, the script changes to the main parent branch, fetches the latest changes, and creates a new branch with the specified build name. It then prompts the user to push the new branch to the remote repository.
 

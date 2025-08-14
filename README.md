@@ -1,4 +1,4 @@
-# branch_builder
+# branch_builder - One release -> many microservices.
 Bash script for preparation before BUILD for more that one microservices
 
 ## The script is designed to automate the process of creating new build branches for different microservices. 
